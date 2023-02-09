@@ -5,9 +5,6 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-let dataSource = []
-
-
 document.getElementById('btn').addEventListener('click', () => {
   if (document.getElementById('question').value) {
     document.querySelector('.content').innerHTML = '加载中...'
@@ -20,19 +17,12 @@ document.getElementById('btn').addEventListener('click', () => {
       frequency_penalty: 0,
       presence_penalty: 0,
     }).then((res) => {
-      console.log(res.data.choices[0].text)
       if (res.data.choices[0].text.includes('```')) {
         document.querySelector('.pre').style.display = 'block'
         document.querySelector('.pre').innerText = res.data.choices[0].text;
       } else {
-
         document.querySelector('.content').innerText = res.data.choices[0].text;
       }
-      dataSource.push({
-        question: document.getElementById('question').value,
-        answer: res.data.choices[0].text
-      })
-      localStorage.setItem('dataSource', JSON.stringify(dataSource))
     })
   }
 })
