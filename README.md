@@ -1,6 +1,14 @@
 # chatgpt-demo
 
-# usage
+一个基于 chatgpt 的简单的回答程序
+
+# Get OPENAI_API_KEY
+
+ 登录 https://beta.openai.com/account/api-keys 获取apiKey
+ 
+ 把它配置到 **vite.config.js** 的 process.env 
+  
+ # usage
 
 `npm install`
 
