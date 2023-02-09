@@ -4,7 +4,7 @@
 
 # Get OPENAI_API_KEY
 
- 登录 https://beta.openai.com/account/api-keys 获取apiKey
+ 注册登录 https://platform.openai.com/account/api-keys 获取apiKey
  
  把它配置到 **vite.config.js** 的 process.env 
   
